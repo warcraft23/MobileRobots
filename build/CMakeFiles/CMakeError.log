@@ -1,0 +1,53 @@
+Determining if the pthread_create exist failed with the following output:
+Change Dir: /home/edward/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec392143172/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec392143172.dir/build.make CMakeFiles/cmTryCompileExec392143172.dir/build
+make[1]: 正在进入目录 `/home/edward/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/edward/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec392143172.dir/CheckSymbolExists.c.o
+/usr/bin/cc    -o CMakeFiles/cmTryCompileExec392143172.dir/CheckSymbolExists.c.o   -c /home/edward/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c
+Linking C executable cmTryCompileExec392143172
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec392143172.dir/link.txt --verbose=1
+/usr/bin/cc       CMakeFiles/cmTryCompileExec392143172.dir/CheckSymbolExists.c.o  -o cmTryCompileExec392143172 -rdynamic 
+CMakeFiles/cmTryCompileExec392143172.dir/CheckSymbolExists.c.o：在函数‘main’中：
+CheckSymbolExists.c:(.text+0x16)：对‘pthread_create’未定义的引用
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec392143172] 错误 1
+make[1]:正在离开目录 `/home/edward/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec392143172/fast] 错误 2
+
+File /home/edward/catkin_ws/build/CMakeFiles/CMakeTmp/CheckSymbolExists.c:
+/* */
+#include <pthread.h>
+
+int main(int argc, char** argv)
+{
+  (void)argv;
+#ifndef pthread_create
+  return ((int*)(&pthread_create))[argc];
+#else
+  (void)argc;
+  return 0;
+#endif
+}
+
+Determining if the function pthread_create exists in the pthreads failed with the following output:
+Change Dir: /home/edward/catkin_ws/build/CMakeFiles/CMakeTmp
+
+Run Build Command:/usr/bin/make "cmTryCompileExec3095318988/fast"
+/usr/bin/make -f CMakeFiles/cmTryCompileExec3095318988.dir/build.make CMakeFiles/cmTryCompileExec3095318988.dir/build
+make[1]: 正在进入目录 `/home/edward/catkin_ws/build/CMakeFiles/CMakeTmp'
+/usr/bin/cmake -E cmake_progress_report /home/edward/catkin_ws/build/CMakeFiles/CMakeTmp/CMakeFiles 1
+Building C object CMakeFiles/cmTryCompileExec3095318988.dir/CheckFunctionExists.c.o
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create   -o CMakeFiles/cmTryCompileExec3095318988.dir/CheckFunctionExists.c.o   -c /usr/share/cmake-2.8/Modules/CheckFunctionExists.c
+Linking C executable cmTryCompileExec3095318988
+/usr/bin/cmake -E cmake_link_script CMakeFiles/cmTryCompileExec3095318988.dir/link.txt --verbose=1
+/usr/bin/cc   -DCHECK_FUNCTION_EXISTS=pthread_create    CMakeFiles/cmTryCompileExec3095318988.dir/CheckFunctionExists.c.o  -o cmTryCompileExec3095318988 -rdynamic -lpthreads 
+/usr/bin/ld: cannot find -lpthreads
+collect2: error: ld returned 1 exit status
+make[1]: *** [cmTryCompileExec3095318988] 错误 1
+make[1]:正在离开目录 `/home/edward/catkin_ws/build/CMakeFiles/CMakeTmp'
+make: *** [cmTryCompileExec3095318988/fast] 错误 2
+
+

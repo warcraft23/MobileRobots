@@ -1,0 +1,79 @@
+<launch>
+	
+	<group ns="RosAria1">
+		<node pkg="rosaria" name="test" type="RosAria">
+		
+			<param name="~port" value="10.0.126.11:8101" />
+
+		</node>
+	</group>
+	
+	
+	<group ns="RosAria2">
+		<node pkg="rosaria" name="test" type="RosAria" >
+			<param name="~port" value="10.0.126.12:8101"/>
+		</node>
+	</group>
+
+	<group ns="RosAria3">
+		<node pkg="rosaria" name="test" type="RosAria" >
+			<param name="~port" value="10.0.126.13:8101"/>
+		</node>
+	</group>
+
+<!--
+	<group ns="TeleCode">
+		<node pkg="rosaria" name="TeleCode" type="TeleCode" >
+		
+		</node>
+	</group>
+-->
+<!--
+
+
+	<group ns="RosAria4">
+		<node pkg="rosaria" name="test" type="RosAria" >
+			<param name="~port" value="127.0.0.1:8104"/>
+		</node>
+	</group>
+
+	<group ns="RosAria5">
+		<node pkg="rosaria" name="test" type="RosAria" >
+			<param name="~port" value="127.0.0.1:8105"/>
+		</node>
+	</group>
+
+	<node pkg="rosaria" name="transfer1" type="AriaTransfer">
+		<remap from="input" to="TeleCode"/>
+		<remap from="output" to="RosAria1/test"/>
+	</node>
+	-->
+
+	<node pkg="rosaria" name="transfer2" type="AriaTransfer">
+		<remap from="input" to="RosAria1/test"/>
+		<remap from="output" to="RosAria2/test"/>
+	</node>
+	
+
+	
+	<node pkg="rosaria" name="transfer3" type="AriaTransfer">
+		<remap from="input" to="RosAria1/test"/>
+		<remap from="output" to="RosAria3/test"/>
+	</node>
+	<!--
+	-->
+<!--
+	<node pkg="rosaria" name="transfer3" type="AriaTransfer">
+		<remap from="input" to="RosAria1/test"/>
+		<remap from="output" to="RosAria4/test"/>
+	</node>
+
+	<node pkg="rosaria" name="transfer4" type="AriaTransfer">
+		<remap from="input" to="RosAria1/test"/>
+		<remap from="output" to="RosAria5/test"/>
+	</node>
+-->
+
+	
+	
+</launch>
